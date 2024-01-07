@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="./password.png" />
+    <title>Password Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="./js/localizer.js" type="text/javascript"></script>
+  </head>
+  <body translate="no">
+    <div class="container">
+      <h2 class="title"><localized-text key="password_generator"></localized-text></h2>
+      <div class="result">
+        <div class="result__title field-title"><localized-text key="generated_password"></localized-text></div>
+        <div class="result__info right"><localized-text key="click_to_copy"></localized-text></div>
+        <div class="result__info left"><localized-text key="copied"></localized-text></div>
+        <div class="result__viewbox" id="result"><localized-text key="click_generate"></localized-text></div>
+        <button id="copy-btn" style="--x: 0; --y: 0">
+          <i class="far fa-copy"></i>
+        </button>
+      </div>
+      <div class="length range__slider" data-min="4" data-max="32">
+        <div class="length__title field-title" data-length="0"><localized-text key="length"></localized-text>:</div>
+        <input id="slider" type="range" min="4" max="32" value="16" />
+      </div>
+
+      <div class="settings">
+        <span class="settings__title field-title"><localized-text key="settings"></localized-text></span>
+        <div class="setting">
+          <input type="checkbox" id="uppercase" checked />
+          <label for="uppercase"><localized-text key="uppercase"></localized-text></label>
+        </div>
+        <div class="setting">
+          <input type="checkbox" id="lowercase" checked />
+          <label for="lowercase"><localized-text key="lowercase"></localized-text></label>
+        </div>
+        <div class="setting">
+          <input type="checkbox" id="number" checked />
+          <label for="number"><localized-text key="numbers"></localized-text></label>
+        </div>
+        <div class="setting">
+          <input type="checkbox" id="symbol" checked />
+          <label for="symbol"><localized-text key="symbols"></localized-text></label>
+        </div>
+      </div>
+      <button class="btn generate" id="generate"><localized-text key="generate"></localized-text></button>
+    </div>
+    <script src="/js/passwordGenerator/cookieUtils.js"></script>
+    <script src="/js/passwordGenerator/generator.js"></script>
+    <script src="/js/passwordGenerator/utils.js"></script>
+    <script src="/js/passwordGenerator/main.js"></script>
+  </body>
+</html>
